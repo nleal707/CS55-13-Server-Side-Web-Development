@@ -1,0 +1,7 @@
+{
+  "name": "rail-scout",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "react-vite"
+}

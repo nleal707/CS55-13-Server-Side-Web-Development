@@ -1,0 +1,220 @@
+/* ============================================
+   ACCESSIBILITY STYLES
+   WCAG 2.1 Level AA Compliance
+   ============================================ */
+
+/* ============================================
+   GLOBAL FOCUS INDICATORS
+   ============================================ */
+
+/* Base focus styles - visible outline for keyboard navigation */
+*:focus-visible {
+  outline: 3px solid var(--focus-outline-light);
+  outline-offset: 2px;
+  box-shadow: 0 0 0 1px var(--focus-ring-light), 
+              0 0 0 4px var(--focus-ring-light);
+}
+
+/* Dark mode focus indicators */
+@media (prefers-color-scheme: dark) {
+  *:focus-visible {
+    outline-color: var(--focus-outline-dark);
+    box-shadow: 0 0 0 1px var(--focus-ring-dark), 
+                0 0 0 4px var(--focus-ring-dark);
+  }
+}
+
+/* Remove default focus outline for mouse users */
+*:focus:not(:focus-visible) {
+  outline: none;
+}
+
+/* ============================================
+   COMPONENT-SPECIFIC FOCUS STYLES
+   ============================================ */
+
+/* Button Focus States */
+button:focus-visible,
+ion-button:focus-visible {
+  outline: 3px solid var(--focus-outline-light);
+  outline-offset: 3px;
+  box-shadow: 0 0 0 2px var(--focus-ring-light), 
+              0 0 0 5px var(--focus-ring-light),
+              var(--card-shadow-md);
+  border-radius: 8px;
+}
+
+@media (prefers-color-scheme: dark) {
+  button:focus-visible,
+  ion-button:focus-visible {
+    outline-color: var(--focus-outline-dark);
+    box-shadow: 0 0 0 2px var(--focus-ring-dark), 
+                0 0 0 5px var(--focus-ring-dark),
+                var(--card-shadow-md);
+  }
+}
+
+/* Link Focus States */
+a:focus-visible {
+  outline: 3px solid var(--focus-outline-light);
+  outline-offset: 2px;
+  text-decoration: underline;
+  text-decoration-thickness: 2px;
+  text-underline-offset: 4px;
+  border-radius: 4px;
+}
+
+@media (prefers-color-scheme: dark) {
+  a:focus-visible {
+    outline-color: var(--focus-outline-dark);
+  }
+}
+
+/* Card Focus States */
+ion-card[button]:focus-visible,
+.card-focusable:focus-visible {
+  outline: 3px solid var(--focus-outline-light);
+  outline-offset: 4px;
+  box-shadow: 0 0 0 2px var(--focus-ring-light), 
+              0 0 0 6px var(--focus-ring-light),
+              var(--card-shadow-lg);
+  border-radius: var(--card-border-radius);
+}
+
+@media (prefers-color-scheme: dark) {
+  ion-card[button]:focus-visible,
+  .card-focusable:focus-visible {
+    outline-color: var(--focus-outline-dark);
+    box-shadow: 0 0 0 2px var(--focus-ring-dark), 
+                0 0 0 6px var(--focus-ring-dark),
+                var(--card-shadow-lg);
+  }
+}
+
+/* Tab Button Focus States */
+ion-tab-button:focus-visible {
+  outline: 3px solid #ffffff;
+  outline-offset: 3px;
+  box-shadow: 0 0 0 2px rgba(255, 255, 255, 0.5), 
+              0 0 0 5px rgba(255, 255, 255, 0.3);
+  border-radius: 8px;
+  z-index: 10;
+}
+
+/* Input Field Focus States */
+input:focus-visible,
+textarea:focus-visible,
+ion-input:focus-visible,
+ion-textarea:focus-visible {
+  outline: 3px solid var(--focus-outline-light);
+  outline-offset: 2px;
+  box-shadow: 0 0 0 2px var(--focus-ring-light);
+  border-radius: 8px;
+}
+
+@media (prefers-color-scheme: dark) {
+  input:focus-visible,
+  textarea:focus-visible,
+  ion-input:focus-visible,
+  ion-textarea:focus-visible {
+    outline-color: var(--focus-outline-dark);
+    box-shadow: 0 0 0 2px var(--focus-ring-dark);
+  }
+}
+
+/* FAB Button Focus States */
+ion-fab-button:focus-visible {
+  outline: 3px solid #ffffff;
+  outline-offset: 4px;
+  box-shadow: 0 0 0 2px rgba(255, 255, 255, 0.6), 
+              0 0 0 6px rgba(255, 255, 255, 0.4),
+              var(--card-shadow-lg);
+  border-radius: 50%;
+}
+
+/* Modal Focus States */
+ion-modal ion-header ion-button:focus-visible {
+  outline: 3px solid #ffffff;
+  outline-offset: 3px;
+  box-shadow: 0 0 0 2px rgba(255, 255, 255, 0.5);
+  border-radius: 8px;
+}
+
+/* ============================================
+   TOUCH TARGET SIZES
+   ============================================ */
+
+/* Ensure minimum touch target size (44x44px for accessibility) */
+button,
+ion-button,
+ion-tab-button,
+ion-fab-button,
+a[role="button"],
+.card-clickable {
+  min-height: 44px;
+  min-width: 44px;
+}
+
+/* ============================================
+   SKIP LINKS
+   ============================================ */
+
+.skip-link {
+  position: absolute;
+  top: -40px;
+  left: 0;
+  background: var(--ion-color-primary);
+  color: #ffffff;
+  padding: 8px 16px;
+  text-decoration: none;
+  border-radius: 0 0 4px 0;
+  z-index: 1000;
+  font-weight: 600;
+}
+
+.skip-link:focus {
+  top: 0;
+  outline: 3px solid #ffffff;
+  outline-offset: 2px;
+}
+
+/* ============================================
+   ARIA LIVE REGIONS
+   ============================================ */
+
+[aria-live="polite"],
+[aria-live="assertive"] {
+  position: absolute;
+  left: -10000px;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+}
+
+/* Screen reader only class */
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border-width: 0;
+}
+
+/* ============================================
+   REDUCED MOTION SUPPORT
+   ============================================ */
+
+@media (prefers-reduced-motion: reduce) {
+  *:focus-visible {
+    transition: none;
+  }
+  
+  *:focus-visible {
+    animation: none;
+  }
+}
+

@@ -1,0 +1,18 @@
+{
+  "private": true,
+  "scripts": {
+    "build": "next build",
+    "dev": "next dev",
+    "start": "next start"
+  },
+  "dependencies": {
+    "bootstrap": "^5.3.8",
+    "next": "latest",
+    "react": "latest",
+    "react-bootstrap": "^2.10.10",
+    "react-dom": "latest"
+  },
+  "engines": {
+    "node": ">=18"
+  }
+}

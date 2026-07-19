@@ -1,0 +1,191 @@
+/* ============================================
+   PLACES PAGE STYLING
+   ============================================ */
+
+.places-container {
+  padding: var(--spacing-md);
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-lg);
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.place-card {
+  margin: 0;
+  border-radius: var(--card-border-radius);
+  box-shadow: var(--card-shadow-sm);
+  overflow: hidden;
+  transition: box-shadow var(--anim-normal) var(--ease-out-cubic);
+  background: var(--ion-background-color);
+}
+
+.place-card:hover {
+  box-shadow: var(--card-shadow-md);
+}
+
+.place-card:active {
+  box-shadow: var(--card-shadow-sm);
+}
+
+/* Focus state for keyboard navigation */
+.place-card:focus-visible {
+  outline: 3px solid var(--focus-outline-light);
+  outline-offset: 4px;
+  box-shadow: 0 0 0 2px var(--focus-ring-light), 
+              0 0 0 6px var(--focus-ring-light),
+              var(--card-shadow-lg);
+}
+
+@media (prefers-color-scheme: dark) {
+  .place-card:focus-visible {
+    outline-color: var(--focus-outline-dark);
+    box-shadow: 0 0 0 2px var(--focus-ring-dark), 
+                0 0 0 6px var(--focus-ring-dark),
+                var(--card-shadow-lg);
+  }
+}
+
+.place-card-image {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  display: block;
+  border-radius: var(--card-border-radius) var(--card-border-radius) 0 0;
+  overflow: hidden;
+}
+
+.place-card-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.place-card ion-card-header {
+  padding: var(--spacing-md) var(--spacing-md) var(--spacing-sm);
+  background: var(--color-card-bg);
+  border-bottom: 1px solid var(--border-contrast-light);
+}
+
+.place-card ion-card-title {
+  font-size: 1.25rem;
+  font-weight: 600;
+  line-height: 1.4;
+  color: var(--text-primary-light);
+  margin: 0 0 var(--spacing-sm) 0;
+  letter-spacing: 0;
+}
+
+.place-location-indicator {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-xs);
+  margin-top: var(--spacing-xs);
+}
+
+.location-icon {
+  font-size: 1rem;
+  color: var(--ion-color-primary);
+}
+
+.location-text {
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: var(--ion-color-primary);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.place-card ion-card-content {
+  padding: var(--spacing-md);
+}
+
+.preview-description {
+  display: inline-block;
+  color: var(--text-secondary-light);
+  line-height: 1.7;
+  font-size: 1rem; /* Ensure readable size */
+  margin: 0;
+}
+
+.preview-description p {
+  margin: 0;
+  display: inline;
+}
+
+.preview-chevron {
+  vertical-align: middle;
+  margin-left: 6px;
+  display: inline-block;
+  color: var(--ion-color-primary);
+  transition: transform var(--anim-fast) var(--ease-out-cubic);
+}
+
+.place-card:hover .preview-chevron {
+  opacity: 0.8;
+}
+
+/* Empty state */
+.places-container:empty::before {
+  content: 'No places available';
+  display: block;
+  text-align: center;
+  padding: var(--spacing-2xl);
+  color: var(--ion-color-medium);
+  font-size: 1.1rem;
+}
+
+/* Responsive Design */
+@media (min-width: 768px) {
+  .places-container {
+    padding: var(--spacing-lg);
+    gap: var(--spacing-xl);
+  }
+
+  .place-card-image {
+    height: 250px;
+  }
+
+  .place-card ion-card-title {
+    font-size: 1.5rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  .places-container {
+    max-width: 900px;
+    padding: var(--spacing-xl);
+  }
+
+  .place-card-image {
+    height: 280px;
+  }
+
+  /* Hover effects for desktop */
+  @media (hover: hover) {
+    .place-card:hover {
+      box-shadow: var(--card-shadow-lg);
+    }
+  }
+}
+
+/* Dark mode adjustments */
+@media (prefers-color-scheme: dark) {
+  .place-card {
+    background: var(--ion-background-color);
+    border-color: var(--border-contrast-dark);
+  }
+
+  .place-card ion-card-header {
+    background: var(--color-card-bg);
+    border-bottom-color: var(--border-contrast-dark);
+  }
+
+  .place-card ion-card-title {
+    color: var(--text-primary-dark);
+  }
+
+  .preview-description {
+    color: var(--text-secondary-dark);
+  }
+}

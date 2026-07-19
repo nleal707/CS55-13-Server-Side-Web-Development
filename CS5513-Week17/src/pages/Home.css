@@ -1,0 +1,22 @@
+/* Home landing page styles */
+
+.home-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  padding: 2rem;
+  text-align: center;
+}
+
+.home-container h1 {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+  color: var(--ion-color-primary);
+}
+
+.home-container p {
+  font-size: 1.2rem;
+  color: var(--ion-color-medium);
+}

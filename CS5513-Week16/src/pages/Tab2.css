@@ -1,0 +1,224 @@
+/* ============================================
+   PHOTO GALLERY PAGE STYLING
+   ============================================ */
+
+/* Empty state styling */
+.empty-state {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 60vh;
+  padding: var(--spacing-xl);
+  text-align: center;
+  background: var(--bg-secondary-solid);
+  border-radius: var(--card-border-radius);
+  margin: var(--spacing-lg);
+  border: 1px solid var(--border-contrast-light);
+}
+
+.empty-state-icon {
+  font-size: 5rem;
+  color: var(--ion-color-primary);
+  margin-bottom: var(--spacing-lg);
+  opacity: 0.6;
+}
+
+.empty-state h2 {
+  margin: var(--spacing-md) 0 var(--spacing-sm);
+  color: var(--text-primary-light);
+  font-weight: 600;
+  font-size: 1.75rem;
+}
+
+.empty-state p {
+  color: var(--text-secondary-light);
+  margin: 0;
+  font-size: 1rem;
+  position: relative;
+  z-index: 1;
+  line-height: 1.7;
+}
+
+/* Photo thumbnail styling */
+ion-grid {
+  padding: var(--spacing-md);
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+ion-col {
+  padding: var(--spacing-sm);
+}
+
+.photo-thumbnail {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 1;
+  overflow: hidden;
+  border-radius: var(--card-border-radius);
+  cursor: pointer;
+  transition: box-shadow var(--anim-normal) var(--ease-out-cubic);
+  background: var(--ion-color-light);
+  box-shadow: var(--card-shadow-sm);
+  border: 1px solid var(--border-contrast-light);
+}
+
+.photo-thumbnail:hover {
+  box-shadow: var(--card-shadow-md);
+}
+
+.photo-thumbnail:active {
+  box-shadow: var(--card-shadow-sm);
+}
+
+/* Focus state for keyboard navigation */
+.photo-thumbnail:focus-visible {
+  outline: 3px solid var(--focus-outline-light);
+  outline-offset: 4px;
+  box-shadow: 0 0 0 2px var(--focus-ring-light), 
+              0 0 0 6px var(--focus-ring-light),
+              var(--card-shadow-lg);
+  border-radius: var(--card-border-radius);
+}
+
+@media (prefers-color-scheme: dark) {
+  .photo-thumbnail:focus-visible {
+    outline-color: var(--focus-outline-dark);
+    box-shadow: 0 0 0 2px var(--focus-ring-dark), 
+                0 0 0 6px var(--focus-ring-dark),
+                var(--card-shadow-lg);
+  }
+}
+
+.photo-thumbnail ion-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* Loading overlay */
+.loading-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(0, 0, 0, 0.6);
+  backdrop-filter: blur(4px);
+  z-index: 1000;
+}
+
+.loading-overlay ion-spinner {
+  --color: #ffffff;
+  width: 48px;
+  height: 48px;
+}
+
+/* FAB button styling */
+ion-fab {
+  margin-bottom: var(--spacing-md);
+  z-index: 100;
+}
+
+ion-fab-button {
+  --background: var(--ion-color-primary);
+  --background-activated: var(--ion-color-primary-shade);
+  --color: #ffffff;
+  --box-shadow: var(--card-shadow-md);
+  width: 56px;
+  height: 56px;
+  margin-bottom: var(--spacing-sm);
+  transition: box-shadow var(--anim-normal) var(--ease-out-cubic),
+              opacity var(--anim-fast) var(--ease-out-cubic);
+}
+
+ion-fab-button:hover {
+  --box-shadow: var(--card-shadow-lg);
+}
+
+ion-fab-button:active {
+  opacity: 0.9;
+}
+
+ion-fab-button[disabled] {
+  opacity: 0.5;
+}
+
+/* FAB positioning adjustments */
+ion-fab[vertical="bottom"][horizontal="end"] {
+  bottom: calc(80px + env(safe-area-inset-bottom, 0px));
+}
+
+ion-fab[vertical="bottom"][horizontal="center"] {
+  bottom: calc(80px + env(safe-area-inset-bottom, 0px));
+}
+
+/* Responsive Design */
+@media (min-width: 768px) {
+  ion-grid {
+    padding: var(--spacing-lg);
+  }
+
+  ion-col {
+    padding: var(--spacing-md);
+  }
+
+  .empty-state {
+    margin: var(--spacing-xl);
+    padding: var(--spacing-2xl);
+  }
+
+  .empty-state-icon {
+    font-size: 6rem;
+  }
+
+  .empty-state h2 {
+    font-size: 2rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  ion-grid {
+    padding: var(--spacing-xl);
+  }
+
+  /* 3-column grid on desktop */
+  ion-col[size="6"] {
+    flex: 0 0 calc(33.333% - 1rem);
+    max-width: calc(33.333% - 1rem);
+    width: calc(33.333% - 1rem);
+  }
+
+  /* Hover effects for desktop */
+  @media (hover: hover) {
+    .photo-thumbnail:hover {
+      box-shadow: var(--card-shadow-lg);
+    }
+  }
+}
+
+/* Dark mode adjustments */
+@media (prefers-color-scheme: dark) {
+  .empty-state {
+    background: var(--bg-secondary-solid);
+    border-color: var(--border-contrast-dark);
+  }
+
+  .empty-state h2 {
+    color: var(--text-primary-dark);
+  }
+
+  .empty-state p {
+    color: var(--text-secondary-dark);
+  }
+
+  .photo-thumbnail {
+    background: var(--bg-primary-dark);
+    border-color: var(--border-contrast-dark);
+    box-shadow: var(--card-shadow-md);
+  }
+}
