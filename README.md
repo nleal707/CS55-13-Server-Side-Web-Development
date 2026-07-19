@@ -19,25 +19,26 @@ The concepts, logic, and architectural patterns applied throughout these weekly 
 
 ## 🗂️ Weekly Modules & Directory Structure
 
-Each directory represents a specific week of the Fall 2023 course schedule and operates as its own self-contained module. 
+Each directory represents a specific week of the Fall 2023 course schedule and operates as its own self-contained module.
 
-* 📁 `CS5513-Week01-main/` - **Introduction to JavaScript + GitHub:** Features a foundational Node.js web server utilizing the built-in `http` module. It demonstrates basic URL routing by evaluating the request path (e.g., `/jerry`, `/elaine`) and returning specific plain-text responses accordingly.
-* 📁 `CS5513-Week02-main/` - **Introduction to Node.js + React:** Transitions to client-side reactivity, exploring fundamental React component architecture, JSX syntax, and basic state/prop management within a Node environment.
-* 📁 `CS5513-Week03-master/` - **Introduction to Next.js:** Introduces the Next.js React framework, establishing a full-stack environment and exploring file-based routing and server-side rendering (SSR) fundamentals.
-* 📁 `CS5513-Week04-master/` - **Basic Full-Stack App, Part 1 of 2:** Initiates the development of a multi-page application, focusing on building out the core UI components, page layouts, and client-side interactions.
-* 📁 `CS5513-Week05-master/` - **Basic Full-Stack App, Part 2 of 2:** Concludes the foundational Next.js application by wiring up local data structures, API routes, and finalizing the component hierarchy.
-* 📁 `CS5513-Week06-master/` - **Introduction to Databases + Firebase:** Shifts focus to Backend-as-a-Service (BaaS) infrastructure. Covers the initialization of Google Firebase, securing service accounts, and setting up NoSQL cloud database environments.
-* 📁 `CS5513-Week07_2-main/` - **Data-Driven Full-Stack App, Part 1 of 3:** Connects the Next.js frontend to the Firebase backend, implementing asynchronous data fetching to dynamically populate the user interface.
-* 📁 `CS5513-Week08-main/` - **Data-Driven Full-Stack App, Part 2 of 3:** Expands the data-driven functionality by implementing user input handling, form validation, and executing database write operations.
-* 📁 `CS5513-Week09-main/` - **Data-Driven Full-Stack App, Part 3 of 3:** Finalizes the data-driven application. Focuses on executing full CRUD (Create, Read, Update, Delete) operations, refining authentication workflows, and solidifying the integration between the frontend and Firebase.
-*(Note: Week 10 (Midterm) and Week 11 (Intro to PHP + SQL) are not tracked as code repositories)*
-* 📁 `CS5513-Week12-master/` - **Headless CMS-Powered App, Part 1 of 3:** Transitions to utilizing a Headless Content Management System. Covers the initial setup of a headless CMS backend, establishing the database model, and configuring decoupled API access.
-* 📁 `CS5513-Week13-master/` - **Headless CMS-Powered App, Part 2 of 3:** Focuses on fetching and rendering data from the headless CMS. Implements asynchronous API calls to retrieve dynamic JSON content and integrate it into the frontend application architecture.
-* 📁 `CS5513-Week14-master/` - **Headless CMS-Powered App, Part 3 of 3:** Finalizes the headless CMS application. Involves advanced content routing, dynamic page generation based on CMS data, and refining the user interface for a seamless decoupled experience.
-* 📁 `CS5513-Week14_2-master/` - **Headless CMS-Powered App, Part 3 of 3 (Continued):** Supplementary module extending the finalization of the headless CMS architecture, focusing on specific deployment configurations or extended feature implementations.
-* 📁 `CS5513-Week15-master/` - **Hybrid Mobile Apps, Part 1 of 3:** Shifts focus to mobile development. Introduces hybrid application frameworks, translating web-based React/Next.js skills into a mobile context, and establishing the mobile project structure.
-* 📁 `CS5513-Week16-master/` - **Hybrid Mobile Apps, Part 2 of 3:** Continues mobile app development. Focuses on mobile-specific UI components, gesture navigation paradigms, and adapting responsive web layouts to native mobile screen constraints.
-* 📁 `CS5513-Week17-master/` - **Hybrid Mobile Apps, Part 3 of 3:** Concludes the mobile application module and the course. Covers final app packaging, testing mobile hardware interactions, and preparing the hybrid application for potential distribution.
+| Directory | Module Topic | Description |
+| :--- | :--- | :--- |
+| 📁 `CS5513-Week01-main/` | **Intro to JavaScript + GitHub** | Features a foundational Node.js web server utilizing the built-in `http` module. Demonstrates basic URL routing by evaluating request paths. |
+| 📁 `CS5513-Week02-main/` | **Intro to Node.js + React** | Transitions to client-side reactivity, exploring fundamental React component architecture, JSX syntax, and basic state/prop management. |
+| 📁 `CS5513-Week03-master/` | **Intro to Next.js** | Introduces the Next.js React framework, establishing a full-stack environment and exploring file-based routing and SSR fundamentals. |
+| 📁 `CS5513-Week04-master/` | **Basic Full-Stack App, Part 1** | Initiates the development of a multi-page application, focusing on building out core UI components, page layouts, and client interactions. |
+| 📁 `CS5513-Week05-master/` | **Basic Full-Stack App, Part 2** | Concludes the foundational Next.js application by wiring up local data structures, API routes, and finalizing the component hierarchy. |
+| 📁 `CS5513-Week06-master/` | **Databases + Firebase** | Shifts focus to BaaS infrastructure. Covers initializing Google Firebase, securing service accounts, and setting up NoSQL databases. |
+| 📁 `CS5513-Week07_2-main/`| **Data-Driven App, Part 1** | Connects the Next.js frontend to the Firebase backend, implementing async data fetching to dynamically populate the user interface. |
+| 📁 `CS5513-Week08-main/` | **Data-Driven App, Part 2** | Expands functionality by implementing user input handling, form validation, and executing database write operations. |
+| 📁 `CS5513-Week09-main/` | **Data-Driven App, Part 3** | Finalizes the data-driven application with full CRUD operations and refined authentication workflows.<br><br>*(Note: Weeks 10 & 11 are not tracked here)* |
+| 📁 `CS5513-Week12-master/`| **Headless CMS App, Part 1** | Transitions to utilizing a Headless CMS. Covers backend setup, database modeling, and configuring decoupled API access. |
+| 📁 `CS5513-Week13-master/`| **Headless CMS App, Part 2** | Focuses on fetching and rendering data from the CMS, implementing async API calls to retrieve dynamic JSON content. |
+| 📁 `CS5513-Week14-master/`| **Headless CMS App, Part 3** | Finalizes the CMS application with advanced content routing and dynamic page generation based on CMS data. |
+| 📁 `CS5513-Week14_2-master/`| **Headless CMS App (Cont.)** | Supplementary module extending the finalization of the architecture, focusing on deployment configurations or extended features. |
+| 📁 `CS5513-Week15-master/`| **Hybrid Mobile Apps, Part 1** | Shifts focus to mobile development. Introduces hybrid frameworks, translating web-based React/Next.js skills into a mobile context. |
+| 📁 `CS5513-Week16-master/`| **Hybrid Mobile Apps, Part 2** | Continues mobile app development. Focuses on mobile-specific UI components, gesture navigation, and adapting responsive layouts. |
+| 📁 `CS5513-Week17-master/`| **Hybrid Mobile Apps, Part 3** | Concludes the course. Covers final app packaging, testing mobile hardware interactions, and preparing for distribution. |
 
 ## 🚀 Getting Started
 
